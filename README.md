@@ -1,2 +1,2 @@
 # forlin
-Repositório para armazenar o Projeto e Front-End do site Forlin.
+Repositório para armazenar o projeto front-end do site Forlin.
