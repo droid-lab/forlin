@@ -14,6 +14,7 @@ html,
 body {
 	max-width: 100%;
 	overflow-x: hidden;
+	font-family: $font-primary;
 }
 
 body {
@@ -29,10 +30,10 @@ body {
 }
 
 // Buttons
-.lien-button {
+
+.forlin-button {
 	height: 5rem;
 	width: 25rem;
-	font-family: $font-secondary;
 	background-color: $color-white;
 	border: none;
 	color: $color-black;
@@ -40,7 +41,6 @@ body {
 	border-radius: 40px;
 	font-size: 1rem;
 	letter-spacing: 0.5px;
-	text-transform: uppercase;
 	@include transition(0.25s);
 	&:hover {
 		background-color: transparent;
@@ -55,7 +55,7 @@ body {
 	}
 }
 
-.lien-button-cta {
+.forlin-button-center {
 	width: 15rem;
 	font-weight: normal;
 	font-size: 1rem;
@@ -63,7 +63,6 @@ body {
 	height: 3.5em;
 	color: $color-white !important;
 	border-radius: 2.8em;
-	text-transform: uppercase;
 	background-color: $color-orange !important;
 	-webkit-transform: translatex(-7.5rem) !important;
 	-moz-transform: translatex(-7.5rem) !important;
@@ -80,7 +79,36 @@ body {
 	}
 }
 
+.forlin-button-blue {
+	width: 15rem;
+	position: relative;
+	float: left;
+	clear: both;
+	margin-top: 2em;
+	color: $color-white !important;
+	background-color: $color-blue-dark !important;
+	&:hover {
+		background-color: transparent !important;
+		color: $color-white !important;
+		border: 1px solid $color-white !important;
+	}
+}
+
 //Default Background
+
+// Diagonal Section
+.diagonal-bottom:after {
+	position: absolute;
+	content: '';
+	border-style: solid;
+	border-width: 0 0 10em 100vw;
+	border-color: transparent $color-gray $color-gray transparent;
+	bottom: 0;
+	@include responsive(s2) {
+		display: none !important;
+	}
+}
+
 .bgs {
 	position: relative;
 	float: left;
@@ -94,43 +122,22 @@ body {
 	}
 }
 
-// Default Styles
-.title-big-white {
-	font-family: $font-secondary;
-	font-size: 3.2em;
-	font-weight: normal;
-	color: $color-white;
-	line-height: 1.3em;
-	@include responsive(s2){
-		font-size: 2em;
-	}
-	.extra-big{
-		font-family: $font-quaternary;
-		font-size: 6rem;
-		@include responsive(s2) {
-			font-size: 2.3em;
-			line-height: 1em;
-		}
-	}
-}
-
 .title-section {
-	color: $color-dark-gray;
+	color: $color-white;
 	font-size: 4.8em;
 	position: relative;
 	float: left;
 	width: 100%;
-	font-family: $font-quaternary;
+	font-family: $font-primary;
 	margin-bottom: 0.8em;
 	margin-top: 1em;
 	&:after {
-		content: '';
+		content: url('../../../images/forlin-decotation.svg');
 		position: absolute;
 		bottom: 1em;
-		width: 1.5em;
+		width: 1em;
 		height: 8px;
-		background-color: $color-orange;
-		top: 1.3em;
+		top: 1em;
 		float: left;
 		left: 5px;
 	}
@@ -146,7 +153,7 @@ body {
 	position: relative;
 	float: left;
 	width: 100%;
-	font-family: $font-quaternary;
+	font-family: $font-primary;
 	font-size: 1.8em;
 	color: $color-orange;
 	margin-bottom: 1.4em;
@@ -159,14 +166,13 @@ body {
 	width: 100%;
 	font-family: $font-secondary;
 	font-size: 1.1em;
-	color: $color-black;
+	color: $color-white;
 	margin-bottom: 1.8em;
 	line-height: 1.6em;
 	@include responsive(s2) {
 		font-size: 1.35em;
 	}
 	span{
-		font-family: $font-tertiary;
 		color: $color-orange;
 	}
 }
@@ -214,7 +220,6 @@ body {
 		}
 	}
 	.extra-big{
-		font-family: $font-quaternary;
 		font-size: 4rem;
 		@include responsive(s2){
 			font-size: 1.8em;
@@ -357,74 +362,6 @@ textarea {
 	}
 }
 
-// Select2
-.select2-container--default.select2-container--open.select2-container--below .select2-selection--single, .select2-container--default.select2-container--open.select2-container--below .select2-selection--multiple{
-	border-radius: 10px;
-}
-
-.select2-container--default.select2-container--open.select2-container--above .select2-selection--single,
-.select2-container--default.select2-container--open.select2-container--above .select2-selection--multiple {
-	border-radius: 10px;
-}
-
-.select2-container{
-	&.error-form{
-		border: none!important;
-		.select2-selection--single {
-			border: 1px solid $color-orange;
-		}
-	}
-	.select2-results__option--highlighted[aria-selected] {
-		background-color: $color-orange;
-		color: white;
-	}
-	&.select2-container--open{
-		.select2-dropdown--above{
-			margin-top: 0!important;
-		}
-		.select2-dropdown{
-			margin-top: -18px;
-			border: none;
-			border-radius:0px;
-		}
-		.select2-selection--single{
-			.select2-selection__arrow {
-				height: 60px;
-				@include responsive(s2) {
-					height: 50px;
-					padding-right: 2em;
-				}
-				width: 30px;
-				b {
-					border-color: transparent transparent $color-white transparent;
-				}
-			}
-		}
-	}
-	.select2-selection--single{
-		@extend .default-input;
-		.select2-selection__rendered {
-			line-height: 60px!important;
-			padding: 0px;
-			color: $color-white;
-			@include responsive(s2) {
-				line-height: 50px!important;
-			}
-		}
-		.select2-selection__arrow{
-			height: 60px;
-			width: 30px;
-			@include responsive(s2){
-				height: 50px;
-				padding-right: 2em;
-			}
-			b{
-				border-color: $color-white transparent transparent transparent;
-			}
-		}
-	}
-}
-
 // Sections
 .default-section {
 	position: relative;
@@ -432,285 +369,398 @@ textarea {
 	width: 100%;
 }
 
-.cta-default {
-	@extend .default-section;
-	.bg-cta {
-		padding-top: 0.5em;
-		margin-top: 4.2em;
-		background-size: initial;
-		background-position: center center;
-	}
-	@include responsive(s2) {
-		height: auto;
-	}
-	.row-cta {
-		@include responsive(s2) {
-			padding: 0 15px;
-		}
-		button {
-			margin-top: 2.1em;
-			margin-bottom: 5em;
-			background-color: $color-white;
-			color: $color-black;
-			&:hover {
-				background-color: transparent;
-				color: $color-white;
-			}
-			@include responsive(s2) {
-				height: 50px;
-				line-height: 50px;
-			}
-		}
-	}
-}
 
-#seja-um-franqueado {
+#home{
+	margin-top: 70px;
 	@extend .default-section;
-	background: linear-gradient( rgba(249, 70, 21, 0.4), rgba(249, 70, 21, 0.4)), url('../../../images/lien-bg-top.jpg');
-	height: 100vh;
+	height: calc(100vh - 70px);
+	font-family: $font-primary;
 	@include responsive(s2) {
 		height: auto;
+		margin-top: 60px;
 	}
 	@extend .bgs;
-	.abf{
-		position: absolute;
-		height: 15em;
-		width: 7em;
-		margin-left: -3.5em;
-		left: 75%;
-		bottom: 4em;
-		background-image: url('../../../images/lien-abf-top.svg');
-		background-repeat: no-repeat;
-		@include responsive(s1){
-			left: 80%;
-		}
+	.container-fluid, #carousel-home, .bg-home {
+		height: calc(100vh - 70px);
 		@include responsive(s2) {
-			display: none!important;
+			height: calc(100vh - 60px);
 		}
 	}
-	.decoration {
-		position: absolute;
-		@include opacity(0.9);
-		background-image: url('../../../images/lien-logo-white.svg');
-		background-repeat: no-repeat;
-		@include responsive(s2){
-			display:none!important;
-		}
-	}
-	.decoration-1{
-		height: 25em;
-		width: 25em;
-		left: 75%;
-		margin-left: -12.5em;
-		top: 25%;
-		@include responsive(s1) {
-			left: 80%;
-		}
-	}
-	.decoration-2 {
-		height: 60em;
-		width: 60em;
-		top: 5%;
-		left: 70%;
-		@include opacity(0.1);
-	}
-	.decoration-3 {
-		height: 100em;
-		width: 100em;
-		top: -15%;
-		left: 0%;
-		@include opacity(0.03);
-	}
-	.container{
-		height: 100vh;
-	}
-	@media only screen and (max-height: 830px){
-		.decoration-1 {
-			height: 20em !important;
-			width: 20em !important;
-			left: 75%;
-			margin-left: -10em !important;
-			top: 20% !important;
-		}
-		.abf {
-			position: absolute;
-			width: 5em;
-			height: 10em;
-			margin-left: -2.5em;
-			left: 75%;
-			bottom: 2em;
-		}
-	}
-	@media only screen and (max-height: 750px){
-		.row-home{
-			input {
-				font-size: 1rem!important;
-				height: 45px;
-				padding: 0 1em;
-			}
-			h1 {
-				font-size: 2.8em;
-			}
-			button{
-				height: 55px;
-				svg{
-					top: 12px!important;
-				}
-			}
-			.extra-big {
-				font-size: 4rem;
-			}
-		}
-		.decoration-1 {
-			height: 18em !important;
-			width: 18em !important;
-			left: 75%;
-			margin-left: -9em !important;
-			top: 23% !important;
-		}
-		.abf {
-			position: absolute;
-			width: 5em;
-			height: 10em;
-			margin-left: -2.5em;
-			left: 75%;
-			bottom: 3em;
-		}
-		.select2-container {
-			&.select2-container--open {
-				.select2-selection--single {
-					.select2-selection__arrow {
-						height: 45px;
-					}
-				}
-			}
-			.select2-selection--single {
-				height: 45px!important;
-				padding: 0 1rem !important;
-				.select2-selection__rendered {
-					line-height: 45px !important;
-					font-size: 1rem;
-				}
-				.select2-selection__arrow {
-					height: 45px;
-				}
-			}
-		}
-
-	}
-	.row-home {
-		height: 100vh;
+	.bg-home{
 		display: flex;
-		justify-content: flex-start;
-		align-items: center;
-		margin-top: 70px;
+		justify-content: center;
+		align-content: center;
+		width: 100%;
+		.center-home{
+			@extend .default-section;
+			height: 300px;
+		}
+	}
+	.title-home {
+		color: $color-blue-dark;
+		font-size: 4.5em;
+		position: relative;
+		float: left;
+		width: 100%;
+		font-weight: normal;
+		line-height: 1em;
 		@include responsive(s2) {
-			margin-top: 40px;
-		}
-		h1 {
-			margin-top: 0px;
-			&:after {
-				content: '';
-				position: absolute;
-				bottom: 1em;
-				height: 8px;
-				width: 2em;
-				background-color: #000000;
-				top: 3.1em;
-				float: left;
-				opacity: 0.31;
-				left: 17px;
-				@include responsive(s2){
-					top: 5em;
-				}
-				@include responsive(s3) {
-					top: 4.3em;
-				}
-			}
-			margin-bottom: 2.85rem;
-			@include responsive(s2) {
-				margin-top: 1.3em;
-			}
-			@include responsive(s3) {
-				.extra-big{
-					font-size: 3rem;
-				}
-				margin-bottom: 0.5em;
-			}
-		}
-		p {
+			margin-bottom: 1em;
 			margin-top: 1em;
+			font-size: 2.5em;
+		}
+		.extra-big {
+			font-size: 8rem;
 			color: $color-white;
-			span{
-				color: $color-white;
-			}
-			@include responsive(s3) {
-				margin-bottom: 1em;
+			@include responsive(s2) {
+				font-size: 1.8em;
 			}
 		}
-		input,
-		.select2-selection--single{
-			@include responsive(s3) {
-				margin-bottom: 0.5em;
-			}
+	}
+	.sub-title-home {
+		position: relative;
+		float: left;
+		width: 100%;
+		font-size: 1.1em;
+		color: $color-white;
+		font-family: $font-secondary;
+		margin-bottom: 1.2em;
+		line-height: 1.6em;
+		text-align: left;
+		max-width: 400px;
+		font-weight: normal !important;
+		@include responsive(s2) {
+			margin-bottom: 0.2em;
+			margin-top: 0.2em;
+			font-size: 1.4em;
 		}
-		button {
-			left: 50%;
-			-webkit-transform: translatex(-12.5rem) !important;
-			-moz-transform: translatex(-12.5rem) !important;
-			-ms-transform: translatex(-12.5rem) !important;
-			transform: translatex(-12.5rem) !important;
-			@include responsive(s2){
-				left: 0;
-				-webkit-transform: translatex(0rem) !important;
-				-moz-transform: translatex(0rem) !important;
-				-ms-transform: translatex(0rem) !important;
-				transform: translatex(0rem) !important;
-			}
-			margin-top: 2em;
-			margin-bottom: 2.85rem;
-			padding-left: 20px;
-			position: relative;
-			border: 1px solid $color-white;
-			&:hover{
-				svg{
-					.cls-1 {
-						fill: $color-white;
+	}
+	.fill-all-height{
+		display: flex;
+		justify-content: center;
+		align-items: center;
+		height: calc(100vh - 70px);
+	}
+	#forlin-logo-big{
+		margin: 0 auto;
+		width: 250px;
+	}
+	.owl-carousel {
+		.owl-dots {
+			position: absolute;
+			width: 100%;
+			.owl-dot {
+				span {
+					@include transition(0.25s);
+				}
+				&:hover {
+					span {
+						background-color: $color-blue-dark !important;
 					}
 				}
-			}
-			svg{
-				@include transition(0.25s);
-				top:18px;
-				position: absolute;
-				height: 30px;
-				left: 30px;
-				@include responsive(s2){
-					top: 14px;
+				&.active {
+					span {
+						background-color: $color-blue-dark !important;
+					}
 				}
-			}
-				@include responsive(s3) {
-					margin-top: 0.5em;
-				}
-		}
-		.box-relative{
-			@extend .default-section;
-		}
-		.padding-left{
-			@include responsive(s2){
-				padding-left: 0px;
 			}
 		}
 	}
 }
+
+// #seja-um-franqueado {
+// 	@extend .default-section;
+// 	background: linear-gradient( rgba(249, 70, 21, 0.4), rgba(249, 70, 21, 0.4)), url('../../../images/forlin-bg-top.jpg');
+// 	height: 100vh;
+// 	@include responsive(s2) {
+// 		height: auto;
+// 	}
+// 	@extend .bgs;
+// 	.abf{
+// 		position: absolute;
+// 		height: 15em;
+// 		width: 7em;
+// 		margin-left: -3.5em;
+// 		left: 75%;
+// 		bottom: 4em;
+// 		background-image: url('../../../images/forlin-abf-top.svg');
+// 		background-repeat: no-repeat;
+// 		@include responsive(s1){
+// 			left: 80%;
+// 		}
+// 		@include responsive(s2) {
+// 			display: none!important;
+// 		}
+// 	}
+// 	.decoration {
+// 		position: absolute;
+// 		@include opacity(0.9);
+// 		background-image: url('../../../images/forlin-logo-white.svg');
+// 		background-repeat: no-repeat;
+// 		@include responsive(s2){
+// 			display:none!important;
+// 		}
+// 	}
+// 	.decoration-1{
+// 		height: 25em;
+// 		width: 25em;
+// 		left: 75%;
+// 		margin-left: -12.5em;
+// 		top: 25%;
+// 		@include responsive(s1) {
+// 			left: 80%;
+// 		}
+// 	}
+// 	.decoration-2 {
+// 		height: 60em;
+// 		width: 60em;
+// 		top: 5%;
+// 		left: 70%;
+// 		@include opacity(0.1);
+// 	}
+// 	.decoration-3 {
+// 		height: 100em;
+// 		width: 100em;
+// 		top: -15%;
+// 		left: 0%;
+// 		@include opacity(0.03);
+// 	}
+// 	.container{
+// 		height: 100vh;
+// 	}
+// 	@media only screen and (max-height: 830px){
+// 		.decoration-1 {
+// 			height: 20em !important;
+// 			width: 20em !important;
+// 			left: 75%;
+// 			margin-left: -10em !important;
+// 			top: 20% !important;
+// 		}
+// 		.abf {
+// 			position: absolute;
+// 			width: 5em;
+// 			height: 10em;
+// 			margin-left: -2.5em;
+// 			left: 75%;
+// 			bottom: 2em;
+// 		}
+// 	}
+// 	@media only screen and (max-height: 750px){
+// 		.row-home{
+// 			input {
+// 				font-size: 1rem!important;
+// 				height: 45px;
+// 				padding: 0 1em;
+// 			}
+// 			h1 {
+// 				font-size: 2.8em;
+// 			}
+// 			button{
+// 				height: 55px;
+// 				svg{
+// 					top: 12px!important;
+// 				}
+// 			}
+// 			.extra-big {
+// 				font-size: 4rem;
+// 			}
+// 		}
+// 		.decoration-1 {
+// 			height: 18em !important;
+// 			width: 18em !important;
+// 			left: 75%;
+// 			margin-left: -9em !important;
+// 			top: 23% !important;
+// 		}
+// 		.abf {
+// 			position: absolute;
+// 			width: 5em;
+// 			height: 10em;
+// 			margin-left: -2.5em;
+// 			left: 75%;
+// 			bottom: 3em;
+// 		}
+// 		.select2-container {
+// 			&.select2-container--open {
+// 				.select2-selection--single {
+// 					.select2-selection__arrow {
+// 						height: 45px;
+// 					}
+// 				}
+// 			}
+// 			.select2-selection--single {
+// 				height: 45px!important;
+// 				padding: 0 1rem !important;
+// 				.select2-selection__rendered {
+// 					line-height: 45px !important;
+// 					font-size: 1rem;
+// 				}
+// 				.select2-selection__arrow {
+// 					height: 45px;
+// 				}
+// 			}
+// 		}
+
+// 	}
+// 	.row-home {
+// 		height: 100vh;
+// 		display: flex;
+// 		justify-content: flex-start;
+// 		align-items: center;
+// 		margin-top: 70px;
+// 		@include responsive(s2) {
+// 			margin-top: 40px;
+// 		}
+// 		h1 {
+// 			margin-top: 0px;
+// 			&:after {
+// 				content: '';
+// 				position: absolute;
+// 				bottom: 1em;
+// 				height: 8px;
+// 				width: 2em;
+// 				background-color: #000000;
+// 				top: 3.1em;
+// 				float: left;
+// 				opacity: 0.31;
+// 				left: 17px;
+// 				@include responsive(s2){
+// 					top: 5em;
+// 				}
+// 				@include responsive(s3) {
+// 					top: 4.3em;
+// 				}
+// 			}
+// 			margin-bottom: 2.85rem;
+// 			@include responsive(s2) {
+// 				margin-top: 1.3em;
+// 			}
+// 			@include responsive(s3) {
+// 				.extra-big{
+// 					font-size: 3rem;
+// 				}
+// 				margin-bottom: 0.5em;
+// 			}
+// 		}
+// 		p {
+// 			margin-top: 1em;
+// 			color: $color-white;
+// 			span{
+// 				color: $color-white;
+// 			}
+// 			@include responsive(s3) {
+// 				margin-bottom: 1em;
+// 			}
+// 		}
+// 		input,
+// 		.select2-selection--single{
+// 			@include responsive(s3) {
+// 				margin-bottom: 0.5em;
+// 			}
+// 		}
+// 		button {
+// 			left: 50%;
+// 			-webkit-transform: translatex(-12.5rem) !important;
+// 			-moz-transform: translatex(-12.5rem) !important;
+// 			-ms-transform: translatex(-12.5rem) !important;
+// 			transform: translatex(-12.5rem) !important;
+// 			@include responsive(s2){
+// 				left: 0;
+// 				-webkit-transform: translatex(0rem) !important;
+// 				-moz-transform: translatex(0rem) !important;
+// 				-ms-transform: translatex(0rem) !important;
+// 				transform: translatex(0rem) !important;
+// 			}
+// 			margin-top: 2em;
+// 			margin-bottom: 2.85rem;
+// 			padding-left: 20px;
+// 			position: relative;
+// 			border: 1px solid $color-white;
+// 			&:hover{
+// 				svg{
+// 					.cls-1 {
+// 						fill: $color-white;
+// 					}
+// 				}
+// 			}
+// 			svg{
+// 				@include transition(0.25s);
+// 				top:18px;
+// 				position: absolute;
+// 				height: 30px;
+// 				left: 30px;
+// 				@include responsive(s2){
+// 					top: 14px;
+// 				}
+// 			}
+// 				@include responsive(s3) {
+// 					margin-top: 0.5em;
+// 				}
+// 		}
+// 		.box-relative{
+// 			@extend .default-section;
+// 		}
+// 		.padding-left{
+// 			@include responsive(s2){
+// 				padding-left: 0px;
+// 			}
+// 		}
+// 	}
+// }
 
 #sobre {
 	@extend .default-section;
-	margin-top: 2.14em;
-	margin-bottom: 2.14em;
+	padding-top: 3em;
+	color: $color-white;
+	background-color: $color-blue;
+	padding-bottom: 200px;
+	.box-img{
+		width: 100%;
+		height: 130px;
+		display: flex;
+		margin-bottom: 1em;
+		justify-content: start;
+		align-items: center;
+	}
+	.icon-mission{
+		height: 65px;
+	}
+	.icon-vision{
+		height: 40px;
+	}
+	.icon-values{
+		height: 70px;
+	}
 	img{
 		@include responsive(s2){
 			display: none!important;
+		}
+	}
+	h1{
+		margin-bottom: 1.3em;
+	}
+	h2{
+		color: $color-white;
+		font-size: 2.5em;
+		text-align: left;
+	}
+	.row-items{
+		p {
+			text-align: left;
+		}
+	}
+	.decoration-logo{
+		background-image: url('../../../images/forlin-logo-decoration-about.svg');
+		background-repeat: no-repeat;
+		background-position: center center;
+		position: absolute;
+		bottom: 30px;
+		right: 100px;;
+		height: 350px;
+		width: 350px;
+		z-index:10;
+		@include responsive(s2) {
+			display: none !important;
 		}
 	}
 }
@@ -733,7 +783,6 @@ textarea {
 			position: relative;
 			float: left;
 			width: 100%;
-			font-family: $font-quaternary;
 			font-size: 1.7em;
 			color: $color-orange;
 			margin-bottom: 1.4em;
@@ -793,13 +842,13 @@ textarea {
 		margin-right: 5px;
 		cursor: pointer;
 		&.hl {
-			font-family: $font-quaternary;
+			font-family: $font-primary;
 		}
 	}
 	.title-glossario{
 		@extend .default-section;
 		color: $color-orange;
-		font-family: $font-quaternary;
+		font-family: $font-primary;
 		margin-top: 1em;
 		margin-bottom: 1em;
 		font-size: 1.5em;
@@ -837,7 +886,7 @@ textarea {
 			border: none;
 			top: 1.3em;
 			right: 1.2em;
-			background-image: url('../../../images/lien-btn-filter.svg');
+			background-image: url('../../../images/forlin-btn-filter.svg');
 			background-color: transparent;
 			@include responsive(s2){
 				right: 2em;
@@ -891,7 +940,7 @@ textarea {
 		h2 {
 			color: $color-dark-gray;
 			font-size: 2em;
-			font-family: $font-quaternary;
+			font-family: $font-primary;
 			margin-bottom: 0.5em;
 			text-align: center;
 		}
@@ -924,29 +973,6 @@ textarea {
 			}
 		}
 	}
-	.owl-carousel {
-		.owl-dots {
-			margin-top: 1em !important;
-			margin-bottom: 2em;
-			position: absolute;
-			width: 100%;
-			.owl-dot {
-				span {
-					@include transition(0.25s);
-				}
-				&:hover {
-					span {
-						background-color: $color-orange !important;
-					}
-				}
-				&.active {
-					span {
-						background-color: $color-orange !important;
-					}
-				}
-			}
-		}
-	}
 	#carousel-seguradoras-associadas {
 		.owl-nav {
 			position: absolute;
@@ -967,7 +993,7 @@ textarea {
 					width: 50px;
 					position: relative;
 					float: left;
-					background-image: url("../../../images/lien-arrow-prev.svg");
+					background-image: url("../../../images/forlin-arrow-prev.svg");
 					margin-left: -61px;
 					@include transition(0.15s);
 					@include responsive(s2) {
@@ -991,7 +1017,7 @@ textarea {
 					width: 50px;
 					position: relative;
 					float: left;
-					background-image: url("../../../images/lien-arrow-next.svg");
+					background-image: url("../../../images/forlin-arrow-next.svg");
 					margin-right: -180px;
 					@include transition(0.15s);
 					@include responsive(s2) {

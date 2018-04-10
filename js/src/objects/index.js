@@ -93,15 +93,6 @@ Index = {
             })
         }
 	},
-	Stellar : {
-		init: function(){
-			if(!Mobile.isMobile){
-				$(window).stellar({
-					horizontalScrolling: false,
-				});
-			}
-		}
-	},
 	Carousels: {
 		configs: {
 			'default': {
@@ -110,37 +101,18 @@ Index = {
 				pagination         : true,
 				items              : 1,
 				dots               : true,
-				autoplay           : true,
+				autoplay           : false,
 				autoplayTimeout    : 3000,
 				autoplayHoverPause : true,
 				singleItem         : true,
-				smartSpeed         : 700
+				smartSpeed         : 700,
+				margin             : 0,
+				stagePadding       : 0
 			}
 		},
 		init: function () {
 			$('.carousel-default').owlCarousel(Index.Carousels.configs['default']);
-			$('.carousel-default').on('mouseout', function () {
-				$('.carousel-default').trigger('stop.owl.autoplay');
-				$('.carousel-default').trigger('play.owl.autoplay', [3000]);
-			});
-			$('#carousel-seguradoras-associadas').owlCarousel({
-				loop: true,
-				nav: true,
-				pagination: true,
-				items: 1,
-				dots: true,
-				autoplay: true,
-				autoplayTimeout: 3000,
-				autoplayHoverPause: true,
-				singleItem: true,
-				navText: ["<i class='arrow-prev'></i>","<i class='arrow-next'></i>"],
-				smartSpeed: 700
-			});
-			$('#carousel-seguradoras-associadas').on('mouseout', function () {
-				$('#carousel-seguradoras-associadas').trigger('stop.owl.autoplay');
-				$('#carousel-seguradoras-associadas').trigger('play.owl.autoplay', [3000]);
-			});
-
+			$('.carousel-default').trigger('refresh.owl.carousel');
 		}
 	},
 	ScrollReveal: {
@@ -322,7 +294,6 @@ Index = {
 	},
     init: function(){
     	Index.Menu.init();
-		Index.Stellar.init();
 		Index.Carousels.init();
 		Index.ScrollReveal.init();
 		Index.InputMask.init();

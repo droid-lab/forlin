@@ -16,7 +16,7 @@ html{
 body{
   font-size: $size-base;
   font-family: $font-primary;
-  background-color: $color-white;
+  background-color: $color-gray;
   color: $color-black;
 }
 *,
@@ -139,7 +139,7 @@ p{
   left: 0;
   right: 0;
   bottom: 0;
-  background-color: $color-white;
+  background-color: $color-blue-dark;
   z-index: 99999;
   display: flex;
   justify-content: center;
