@@ -49,7 +49,7 @@ Index = {
 		go: function(){
 			var scroller  = $(document).scrollTop();
 			var offset    = $(window).height() * 1/6;
-			var offsetImg = $("#seja-um-franqueado").height() - ($(window).height() - 200);
+			var offsetImg = $("#home").height() - ($(window).height() - 200);
             if (scroller - Index.Menu.config.senseSpeed >  Index.Menu.config.previousScroll && scroller > offset){
             	$('#header-menu').addClass('off');
             	$('#header-menu').removeClass('on');
@@ -77,19 +77,22 @@ Index = {
 						$(".menu-mobile").toggleClass("end");
 					}, 500);
 				}
-                var o = $(this);
-                var plus = 30;
-                if(o.attr("href") === '#trabalhe-conosco'|| Mobile.isMobile){
-                	plus = 0;
-                }
-                $("html, body").stop().animate({
-                    scrollTop: $(o.attr("href")).offset().top - plus
-                }, 1e3, "easeOutQuart", function(){
-					if (o.attr("href") !== '#seja-um-franqueado'){
-						$('#header-menu').addClass('off');
-						$('#header-menu').removeClass('on');
-					}
-                });
+				var o = $(this);
+				if (o.attr("href") !== '#home') {
+					$('#header-menu').addClass('off');
+					$('#header-menu').removeClass('on');
+					$("html, body").stop().animate({
+						scrollTop: $(o.attr("href")).offset().top
+					}, 1e3, "easeOutQuart", function () {
+					});
+				}
+				else{
+					$("html, body").stop().animate({
+						scrollTop: 0
+					}, 1e3, "easeOutQuart", function () {
+					});
+				}
+
             })
         }
 	},
@@ -159,27 +162,11 @@ Index = {
 			$(".mask").inputmask();
 		}
 	},
-	Select2: {
-		init: function(){
-			$("#franchisee-state").select2({
-				minimumResultsForSearch: -1,
-				width: "100%"
-			})
-			$("#franchisee-city").select2({
-				minimumResultsForSearch: -1,
-				width: "100%"
-			})
-		}
-	},
 	Actions: {
 		init: function(){
 			Index.Actions.setButtons();
 		},
 		setButtons: function(){
-			$('.btn-send-franchisee').on('click', function(e){
-				e.preventDefault();
-				Index.Actions.sendFranchisee();
-			});
 			$('.btn-send-contact').on('click', function (e) {
 				e.preventDefault();
 				Index.Actions.sendContact();
@@ -234,35 +221,6 @@ Index = {
 				$('.' + div).fadeOut();
 			}, 5000);
 		},
-		sendFranchisee: function(){
-			Validation.check("form-franchisee", function () {
-				Shared.__ajax(
-					{
-						action: "./send-franchisee",
-						data: {
-							"franchisee-name": $("#franchisee-name").val(),
-							"franchisee-phone": $("#franchisee-phone").val(),
-							"franchisee-email": $("#franchisee-email").val(),
-							"franchisee-state": $("#franchisee-state").val(),
-							"franchisee-city": $("#franchisee-city").val()
-						}
-					},
-					function (result) {
-						//var result = JSON.parse(result);
-						Index.Actions.show('fill-message-franchisee', "Enviado com sucesso!");
-					},
-					function () {
-						Index.Actions.beforeSend("btn-send-franchisee-email", "form-franchisee");
-					},
-					function () {
-						Index.Actions.show('fill-message-franchisee', "Houve um erro ao enviar o formulário.");
-					},
-					function () {
-						Index.Actions.complete("btn-send-franchisee-email", "form-franchisee", ["franchisee-state", "franchisee-city"]);
-					}
-				);
-			});
-		},
 		sendContact: function () {
 			Validation.check("form-contact", function () {
 				Shared.__ajax(
@@ -276,7 +234,6 @@ Index = {
 						}
 					},
 					function (result) {
-						//var result = JSON.parse(result);
 						Index.Actions.show('fill-message-contact', "Enviado com sucesso!");
 					},
 					function () {
@@ -297,7 +254,6 @@ Index = {
 		Index.Carousels.init();
 		Index.ScrollReveal.init();
 		Index.InputMask.init();
-		Index.Select2.init();
 		Index.Actions.init();
     }
 }

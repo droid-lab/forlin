@@ -358,13 +358,22 @@ textarea {
 		@include responsive(s2) {
 			margin-bottom: 1em;
 			margin-top: 1em;
-			font-size: 2.5em;
+			font-size: 3.5em;
+			text-align: center;
+			margin-top: - 20px;
 		}
 		.extra-big {
 			font-size: 8rem;
 			color: $color-white;
 			@include responsive(s2) {
-				font-size: 1.8em;
+				font-size: 7rem;
+				width: 100%;
+				display:block;
+				margin: 0;
+				text-align: center;
+			}
+			@include responsive(s3) {
+				font-size: 5rem;
 			}
 		}
 	}
@@ -381,9 +390,12 @@ textarea {
 		max-width: 400px;
 		font-weight: normal !important;
 		@include responsive(s2) {
-			margin-bottom: 0.2em;
+			margin-bottom: 3em;
+			max-width: 100%;
+			padding: 0 5%;
 			margin-top: 0.2em;
 			font-size: 1.4em;
+			text-align: center;
 		}
 	}
 	.fill-all-height{
@@ -417,6 +429,12 @@ textarea {
 			}
 		}
 	}
+	button{
+		@include responsive(s2) {
+			margin-left: 50%;
+			transform: translatex(-50%);
+		}
+	}
 }
 
 #sobre {
@@ -425,6 +443,9 @@ textarea {
 	color: $color-white;
 	background-color: $color-blue;
 	padding-bottom: 200px;
+	@include responsive(s2) {
+		padding-bottom: 30px;
+	}
 	.box-img{
 		width: 100%;
 		height: 130px;
@@ -432,6 +453,9 @@ textarea {
 		margin-bottom: 1em;
 		justify-content: start;
 		align-items: center;
+		@include responsive(s2){
+			display:none;
+		}
 	}
 	.icon-mission{
 		height: 65px;
@@ -466,10 +490,13 @@ textarea {
 		background-position: center center;
 		position: absolute;
 		bottom: -50px;
-		right: 165px;
+		right: 7%;
 		height: 440px;
 		width: 440px;
 		z-index:10;
+		@include responsive(s1) {
+			right: -3%;
+		}
 		@include responsive(s2) {
 			display: none !important;
 		}
@@ -509,6 +536,13 @@ textarea {
 			border-color: $color-blue;
 		}
 	}
+	button {
+		@include responsive(s2) {
+			width: 15rem;
+			left: 50%;
+			margin-left: -7.5rem;
+		}
+	}
 }
 
 #moedas{
@@ -546,6 +580,9 @@ textarea {
 	background-color: $color-blue-dark;
 	margin-bottom: 0em;
 	padding-bottom: 8em;
+	@include responsive(s2) {
+		padding-bottom: 0em;
+	}
 	.row-contato {
 		.title-section {
 			text-align: center;
@@ -614,10 +651,19 @@ textarea {
 			justify-content: center;
 			align-items: center;
 			text-align: center;
+			@include responsive(s2) {
+				width: 180px;
+				height: 180px;
+				margin-bottom: 4em;
+			}
 			img{
 				height: 80px;
 				width: 80px;
 				margin:0 auto;
+				@include responsive(s2) {
+					height: 50px;
+					width: 50px;
+				}
 			}
 			h2{
 				color: $color-white;
