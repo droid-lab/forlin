@@ -95,6 +95,12 @@ body {
     .diagonal-bottom:after {
       display: none !important; } }
 
+.diagonal-orange:after {
+  border-color: transparent #EE7623 #EE7623 transparent; }
+
+.diagonal-blue:after {
+  border-color: transparent #2B5597 #2B5597 transparent; }
+
 .bgs, #home {
   position: relative;
   float: left;
@@ -132,13 +138,29 @@ body {
     .title-section {
       font-size: 3em; } }
 
+.title-section-alternative {
+  color: #EE7623;
+  font-size: 4.8em;
+  position: relative;
+  float: left;
+  width: 100%;
+  font-family: "NexaFreeBoldwebfont", sans-serif;
+  margin-bottom: 0em;
+  margin-top: 1em; }
+  @media only screen and (max-width: 480px) {
+    .title-section-alternative {
+      font-size: 4.5em; } }
+  @media only screen and (max-width: 320px) {
+    .title-section-alternative {
+      font-size: 3em; } }
+
 .title-h2 {
   position: relative;
   float: left;
   width: 100%;
   font-family: "NexaFreeBoldwebfont", sans-serif;
   font-size: 1.8em;
-  color: #EE7623;
+  color: #202945;
   margin-bottom: 1.4em;
   line-height: 1.4em; }
 
@@ -165,74 +187,6 @@ body {
   color: #7B7B7B;
   font-size: 1em; }
 
-.title-cta {
-  color: #FFF;
-  font-size: 2.5em;
-  position: relative;
-  float: left;
-  text-align: center;
-  width: 100%;
-  font-family: "MyriadPro-Regular", sans-serif;
-  font-weight: normal;
-  margin-bottom: 1.6em;
-  margin-top: 1.5em;
-  line-height: 1.5em; }
-  @media only screen and (max-width: 992px) {
-    .title-cta {
-      margin-bottom: 1em;
-      margin-top: 1em;
-      font-size: 2.5em; } }
-  .title-cta:after {
-    content: '';
-    position: absolute;
-    bottom: 1em;
-    width: 1.8em;
-    height: 4px;
-    background-color: #FFF;
-    top: 3.5em;
-    float: left;
-    left: 5px;
-    margin-left: 50%;
-    transform: translatex(-50%); }
-    @media only screen and (max-width: 992px) {
-      .title-cta:after {
-        display: none !important; } }
-  .title-cta .extra-big {
-    font-size: 4rem; }
-    @media only screen and (max-width: 992px) {
-      .title-cta .extra-big {
-        font-size: 1.8em; } }
-
-.sub-title-cta {
-  position: relative;
-  float: left;
-  width: 100%;
-  font-family: "MyriadPro-Regular", sans-serif;
-  font-size: 1.1em;
-  color: #FFF;
-  margin-bottom: 1.2em;
-  line-height: 1.6em;
-  text-align: center;
-  padding: 0px 30%;
-  font-weight: normal !important; }
-  @media only screen and (max-width: 992px) {
-    .sub-title-cta {
-      margin-bottom: 0.2em;
-      margin-top: 0.2em;
-      padding: 0px 2%;
-      font-size: 1.4em; } }
-
-.img-decorative {
-  height: 10em;
-  width: 10em;
-  margin-bottom: 2em;
-  margin-top: 1.3em; }
-
-.generic-relative {
-  position: relative;
-  float: left;
-  width: 100%; }
-
 .no-padding {
   padding: 0px; }
 
@@ -247,7 +201,7 @@ textarea {
   background-color: rgba(87, 52, 34, 0.6);
   border: none;
   width: 100%;
-  border-radius: 10px;
+  border-radius: 0px !important;
   color: #FFF !important;
   height: 60px;
   padding: 0 1.5em;
@@ -287,7 +241,8 @@ textarea {
 textarea {
   height: 120px;
   padding-top: 1em;
-  resize: none; }
+  resize: none;
+  border-radius: 0px !important; }
 
 .fill-message {
   position: relative;
@@ -333,7 +288,7 @@ textarea {
   .owl-carousel .owl-dots .owl-dot.active span {
     background-color: #EE7623 !important; }
 
-.default-section, #home, #home .bg-home .center-home, #sobre, #duvidas-frequentes, #glossario, #glossario h3, #glossario h4, #glossario .title-glossario, #glossario .description-glossario, #glossario .box-relative, #seguradoras-associadas, #seguradoras-associadas .box-relative, #contato, footer {
+.default-section, #home, #home .bg-home .center-home, #sobre, #produtos, #moedas, #contato, footer {
   position: relative;
   float: left;
   width: 100%; }
@@ -449,264 +404,80 @@ textarea {
     background-repeat: no-repeat;
     background-position: center center;
     position: absolute;
-    bottom: 30px;
-    right: 100px;
-    height: 350px;
-    width: 350px;
+    bottom: -50px;
+    right: 165px;
+    height: 440px;
+    width: 440px;
     z-index: 10; }
     @media only screen and (max-width: 992px) {
       #sobre .decoration-logo {
         display: none !important; } }
 
-#duvidas-frequentes {
-  margin-top: 2.14em;
-  margin-bottom: 2.14em; }
-  #duvidas-frequentes .row-duvidas-frequentes .title-section:after {
-    top: 2.4em; }
-  #duvidas-frequentes .row-duvidas-frequentes .p-light {
-    font-size: 1rem;
-    margin-bottom: 2em; }
-  #duvidas-frequentes .row-duvidas-frequentes h3 {
-    position: relative;
-    float: left;
-    width: 100%;
-    font-size: 1.7em;
-    color: #EE7623;
-    margin-bottom: 1.4em;
-    line-height: 1.4em;
-    margin-top: 0;
-    margin-bottom: 1.2em;
-    cursor: pointer; }
-  #duvidas-frequentes .row-duvidas-frequentes .question {
-    position: relative;
-    float: left;
-    width: calc(100% - 3em);
-    font-family: "NexaFreeBoldwebfont", sans-serif;
-    font-size: 1.5em;
-    color: #7B7B7B;
-    margin-bottom: 1.4em;
-    line-height: 1.4em;
-    margin-left: 3em;
-    cursor: pointer; }
-  #duvidas-frequentes .row-duvidas-frequentes .awnser {
-    position: relative;
-    float: left;
-    width: calc(100% - 6em);
-    font-family: "MyriadPro-Regular", sans-serif;
-    font-size: 1rem;
-    color: #7B7B7B;
-    margin-bottom: 1.4em;
-    line-height: 1.4em;
-    margin-left: 6em; }
-
-#glossario {
-  margin-top: 2.14em;
-  margin-bottom: 1em; }
-  #glossario h3 {
-    color: #7B7B7B;
-    font-family: "MyriadPro-Regular", sans-serif;
-    font-size: 1.4em;
-    margin-bottom: 1.5em; }
-  #glossario h4 {
-    color: #EE7623;
-    font-family: "MyriadPro-Regular", sans-serif;
-    font-size: 1.4em;
-    margin-bottom: 1.5em;
-    font-weight: normal; }
-  #glossario .format-letter {
-    position: relative;
-    float: left;
-    margin-right: 5px;
-    cursor: pointer; }
-    #glossario .format-letter.hl {
-      font-family: "NexaFreeBoldwebfont", sans-serif; }
-  #glossario .title-glossario {
-    color: #EE7623;
-    font-family: "NexaFreeBoldwebfont", sans-serif;
-    margin-top: 1em;
-    margin-bottom: 1em;
-    font-size: 1.5em; }
-  #glossario #filter-glossary {
-    margin: 0; }
-  #glossario .description-glossario {
-    margin-left: 3em;
-    font-family: "MyriadPro-Regular", sans-serif;
-    color: #7B7B7B;
-    margin-bottom: 0em;
-    font-size: 1rem;
-    width: calc(100% - 3em); }
-  #glossario .box-relative {
-    margin-bottom: 2em; }
-    #glossario .box-relative input {
-      background-color: #FFF;
-      border: 1px solid #7B7B7B;
-      text-transform: uppercase;
-      color: #EE7623 !important;
-      -webkit-transition: all 0.25s ease-in-out 0s;
-      -moz-transform: all 0.25s ease-in-out 0s;
-      -ms-transition: all 0.25s ease-in-out 0s;
-      transition: all 0.25s ease-in-out 0s; }
-      #glossario .box-relative input::-webkit-input-placeholder {
-        color: #EE7623; }
-      #glossario .box-relative input::-moz-placeholder {
-        color: #EE7623; }
-      #glossario .box-relative input:-ms-input-placeholder {
-        color: #EE7623; }
-      #glossario .box-relative input:-moz-placeholder {
-        color: #EE7623; }
-      #glossario .box-relative input:placeholder-shown {
-        color: #EE7623; }
-      @media only screen and (max-width: 992px) {
-        #glossario .box-relative input {
-          font-size: 1.4em !important; } }
-    #glossario .box-relative button {
-      position: absolute;
-      height: 25px;
-      width: 25px;
-      border: none;
-      top: 1.3em;
-      right: 1.2em;
-      background-image: url("../../../images/forlin-btn-filter.svg");
-      background-color: transparent; }
-      @media only screen and (max-width: 992px) {
-        #glossario .box-relative button {
-          right: 2em;
-          height: 20px;
-          width: 20px;
-          top: 1.6em; } }
-  #glossario ul {
-    position: relative;
-    float: left;
-    width: 100%;
-    margin: 0;
-    padding: 0; }
-    #glossario ul li {
-      list-style-type: none;
-      color: #7B7B7B;
-      font-size: 1.1em;
-      cursor: pointer; }
-      #glossario ul li .hl {
-        color: #EE7623;
-        text-transform: uppercase; }
-
-#seguradoras-associadas {
-  margin-top: 2.14em;
-  margin-bottom: 2.14em; }
-  #seguradoras-associadas .row-seguradoras-associadas .title-section:after {
-    top: 2.4em; }
-  #seguradoras-associadas .box-relative .item-img {
-    border: 1px solid #E5E1E6;
-    width: 100%;
-    height: 160px;
-    border-radius: 10px; }
-    @media only screen and (max-width: 768px) {
-      #seguradoras-associadas .box-relative .item-img {
-        height: 230px; } }
-  #seguradoras-associadas .box-relative h2 {
-    color: #7B7B7B;
-    font-size: 2em;
-    font-family: "NexaFreeBoldwebfont", sans-serif;
-    margin-bottom: 0.5em;
-    text-align: center; }
-  #seguradoras-associadas .box-relative p {
-    color: #EE7623;
-    text-align: center; }
-  #seguradoras-associadas .box-relative button {
-    position: relative;
-    height: 2.5rem;
-    width: 10rem;
-    font-family: "MyriadPro-Regular", sans-serif;
-    background-color: #EE7623;
-    border: none;
-    color: #FFF;
-    padding: 0px;
-    border-radius: 40px;
-    font-size: 0.8rem;
-    left: 50%;
-    letter-spacing: 0.5px;
-    text-transform: uppercase;
-    -webkit-transition: all 0.25s ease-in-out 0s;
-    -moz-transform: all 0.25s ease-in-out 0s;
-    -ms-transition: all 0.25s ease-in-out 0s;
-    transition: all 0.25s ease-in-out 0s;
-    -webkit-transform: translatex(-5rem) !important;
-    -moz-transform: translatex(-5rem) !important;
-    -ms-transform: translatex(-5rem) !important;
-    transform: translatex(-5rem) !important;
-    margin-bottom: 4em; }
-    #seguradoras-associadas .box-relative button:hover {
-      background-color: #7B7B7B; }
-  #seguradoras-associadas #carousel-seguradoras-associadas .owl-nav {
+#produtos {
+  padding-bottom: 10em; }
+  #produtos .p-default {
+    color: #7B7B7B; }
+  #produtos .decoration-coins {
+    background-image: url("../../../images/forlin-decoration-coins.svg");
+    background-repeat: no-repeat;
+    background-position: center center;
     position: absolute;
-    top: calc(50% - 121px);
-    margin: 0px;
-    width: 100%;
-    z-index: -1; }
-    #seguradoras-associadas #carousel-seguradoras-associadas .owl-nav .owl-prev {
-      background: none;
-      padding: 0px;
-      border-radius: 0px;
-      float: left; }
-      #seguradoras-associadas #carousel-seguradoras-associadas .owl-nav .owl-prev:hover {
-        background-color: transparent; }
-      #seguradoras-associadas #carousel-seguradoras-associadas .owl-nav .owl-prev .arrow-prev {
-        height: 50px;
-        width: 50px;
-        position: relative;
-        float: left;
-        background-image: url("../../../images/forlin-arrow-prev.svg");
-        margin-left: -61px;
-        -webkit-transition: all 0.15s ease-in-out 0s;
-        -moz-transform: all 0.15s ease-in-out 0s;
-        -ms-transition: all 0.15s ease-in-out 0s;
-        transition: all 0.15s ease-in-out 0s; }
-        @media only screen and (max-width: 992px) {
-          #seguradoras-associadas #carousel-seguradoras-associadas .owl-nav .owl-prev .arrow-prev {
-            margin-right: 0px; } }
-        #seguradoras-associadas #carousel-seguradoras-associadas .owl-nav .owl-prev .arrow-prev:hover {
-          -webkit-transform: scale(0.9);
-          -ms-transform: scale(0.9);
-          transform: scale(0.9); }
-    #seguradoras-associadas #carousel-seguradoras-associadas .owl-nav .owl-next {
-      background: none;
-      padding: 0px;
-      border-radius: 0px;
-      float: right; }
-      #seguradoras-associadas #carousel-seguradoras-associadas .owl-nav .owl-next:hover {
-        background-color: transparent; }
-      #seguradoras-associadas #carousel-seguradoras-associadas .owl-nav .owl-next .arrow-next {
-        height: 50px;
-        width: 50px;
-        position: relative;
-        float: left;
-        background-image: url("../../../images/forlin-arrow-next.svg");
-        margin-right: -180px;
-        -webkit-transition: all 0.15s ease-in-out 0s;
-        -moz-transform: all 0.15s ease-in-out 0s;
-        -ms-transition: all 0.15s ease-in-out 0s;
-        transition: all 0.15s ease-in-out 0s; }
-        @media only screen and (max-width: 992px) {
-          #seguradoras-associadas #carousel-seguradoras-associadas .owl-nav .owl-next .arrow-next {
-            margin-right: 0px; } }
-        #seguradoras-associadas #carousel-seguradoras-associadas .owl-nav .owl-next .arrow-next:hover {
-          -webkit-transform: scale(0.9);
-          -ms-transform: scale(0.9);
-          transform: scale(0.9); }
+    bottom: -138px;
+    right: -178px;
+    height: 555px;
+    width: 555px;
+    z-index: 10; }
+    @media only screen and (max-width: 992px) {
+      #produtos .decoration-coins {
+        display: none !important; } }
+  #produtos .forlin-button-orange {
+    background-color: #EE7623;
+    width: 15rem;
+    position: relative;
+    float: left;
+    clear: both;
+    margin-top: 3em;
+    color: #FFF !important; }
+    #produtos .forlin-button-orange:hover {
+      background-color: #2B5597;
+      border-color: #2B5597; }
+
+#moedas {
+  background-color: #2B5597;
+  padding-bottom: 8em;
+  padding-top: 2.5em; }
+  #moedas .title-section-alternative {
+    color: #EE7623 !important; }
+  #moedas .title-h2 {
+    color: #FFF; }
+  #moedas .row-items {
+    margin-top: 4em;
+    text-align: center; }
+    #moedas .row-items img {
+      margin: 0 auto;
+      width: 60px;
+      margin-bottom: 1em;
+      margin-top: 2em; }
+    #moedas .row-items h3 {
+      color: #FFF;
+      font-size: 2em; }
+    #moedas .row-items p {
+      margin-top: 2em; }
 
 #contato {
-  background-color: #929294;
-  margin-top: 2.14em;
-  margin-bottom: 0em; }
+  background-color: #202945;
+  margin-bottom: 0em;
+  padding-bottom: 8em; }
   #contato .row-contato .title-section {
     text-align: center;
     color: #FFF; }
     #contato .row-contato .title-section:after {
-      content: '';
+      content: url("../../../images/forlin-decotation.svg");
       position: absolute;
       bottom: 1em;
-      width: 1.8em;
+      width: 1em;
       height: 8px;
-      background-color: #3B3B3B !important;
+      top: 1em;
       float: left;
       left: 5px;
       margin-left: 50%;
@@ -735,8 +506,6 @@ textarea {
     @media only screen and (max-width: 992px) {
       #contato #form-contact input, #contato #form-contact textarea {
         font-size: 1.4em !important; } }
-  #contato #form-contact textarea {
-    border-radius: 10px !important; }
   #contato #form-contact button {
     width: 15em;
     margin-top: 1em;
@@ -746,20 +515,43 @@ textarea {
     -moz-transform: translatex(-7.5em) !important;
     -ms-transform: translatex(-7.5em) !important;
     transform: translatex(-7.5em) !important;
-    background-color: #3B3B3B;
+    background-color: #EE7623;
     color: #FFF;
     border: 1px solid #3B3B3B; }
     #contato #form-contact button:hover {
-      background-color: #EE7623;
-      border: 1px solid #EE7623;
+      background-color: #2B5597;
+      border: 1px solid #2B5597;
       color: #FFF; }
+  #contato .row-items {
+    margin-top: 6em;
+    margin-bottom: 6em; }
+    #contato .row-items .circle {
+      background-color: #2B5597;
+      border-radius: 50%;
+      width: 250px;
+      height: 250px;
+      margin: 0 auto;
+      display: flex;
+      justify-content: center;
+      align-items: center;
+      text-align: center; }
+      #contato .row-items .circle img {
+        height: 80px;
+        width: 80px;
+        margin: 0 auto; }
+      #contato .row-items .circle h2 {
+        color: #FFF;
+        font-size: 1.5em; }
+      #contato .row-items .circle p {
+        color: #EE7623;
+        font-size: 1em; }
 
 footer {
   font-family: "MyriadPro-Regular", sans-serif;
   padding-top: 3em;
   padding-bottom: 2em;
   color: #FFF;
-  background-color: #3B3B3B; }
+  background-color: #EE7623; }
   footer p {
     margin-bottom: 0.1em; }
   footer .col-left img {
@@ -771,6 +563,16 @@ footer {
   @media only screen and (max-width: 992px) {
     footer .col-left {
       text-align: center; } }
+  footer .col-left ul {
+    max-width: 280px;
+    margin: 0;
+    margin-bottom: 1em;
+    padding: 0;
+    display: flex;
+    justify-content: space-between;
+    align-items: center; }
+    footer .col-left ul li {
+      list-style: none; }
   footer .col-right {
     text-align: right; }
     footer .col-right img {

@@ -109,6 +109,14 @@ body {
 	}
 }
 
+.diagonal-orange:after{
+	border-color: transparent $color-orange $color-orange transparent;
+}
+
+.diagonal-blue:after {
+	border-color: transparent $color-blue $color-blue transparent;
+}
+
 .bgs {
 	position: relative;
 	float: left;
@@ -149,13 +157,30 @@ body {
 	}
 }
 
+.title-section-alternative {
+	color: $color-orange;
+	font-size: 4.8em;
+	position: relative;
+	float: left;
+	width: 100%;
+	font-family: $font-primary;
+	margin-bottom: 0em;
+	margin-top: 1em;
+	@include responsive(s4) {
+		font-size: 4.5em;
+	}
+	@include responsive(s5) {
+		font-size: 3em;
+	}
+}
+
 .title-h2 {
 	position: relative;
 	float: left;
 	width: 100%;
 	font-family: $font-primary;
 	font-size: 1.8em;
-	color: $color-orange;
+	color: $color-blue-dark;
 	margin-bottom: 1.4em;
 	line-height: 1.4em;
 }
@@ -186,80 +211,6 @@ body {
 	font-size: 1em;
 }
 
-.title-cta {
-	color: $color-white;
-	font-size: 2.5em;
-	position: relative;
-	float: left;
-	text-align: center;
-	width: 100%;
-	font-family: $font-secondary;
-	font-weight: normal;
-	margin-bottom: 1.6em;
-	margin-top: 1.5em;
-	line-height: 1.5em;
-	@include responsive(s2) {
-		margin-bottom: 1em;
-		margin-top: 1em;
-		font-size: 2.5em;
-	}
-	&:after {
-		content: '';
-		position: absolute;
-		bottom: 1em;
-		width: 1.8em;
-		height: 4px;
-		background-color: #FFF;
-		top: 3.5em;
-		float: left;
-		left: 5px;
-		margin-left: 50%;
-		transform: translatex(-50%);
-		@include responsive(s2) {
-			display: none !important;
-		}
-	}
-	.extra-big{
-		font-size: 4rem;
-		@include responsive(s2){
-			font-size: 1.8em;
-		}
-	}
-}
-
-.sub-title-cta {
-	position: relative;
-	float: left;
-	width: 100%;
-	font-family: $font-secondary;
-	font-size: 1.1em;
-	color: $color-white;
-	margin-bottom: 1.2em;
-	line-height: 1.6em;
-	text-align: center;
-	padding: 0px 30%;
-	font-weight: normal!important;
-	@include responsive(s2) {
-		margin-bottom: 0.2em;
-		margin-top: 0.2em;
-		padding: 0px 2%;
-		font-size: 1.4em;
-	}
-}
-
-.img-decorative {
-    height: 10em;
-    width: 10em;
-    margin-bottom: 2em;
-    margin-top: 1.3em;
-}
-
-.generic-relative {
-	position: relative;
-	float: left;
-	width: 100%;
-}
-
 .no-padding{
 	padding: 0px;
 }
@@ -276,7 +227,7 @@ body {
 	background-color: rgba(87, 52, 34, 0.6);
 	border: none;
 	width: 100%;
-	border-radius: 10px;
+	border-radius: 0px!important;
 	color: $color-white !important;
 	height: 60px;
 	padding: 0 1.5em;
@@ -306,6 +257,7 @@ textarea {
 	height: 120px;
 	padding-top: 1em;
 	resize: none;
+	border-radius: 0px !important;
 }
 
 .fill-message{
@@ -368,7 +320,6 @@ textarea {
 	float: left;
 	width: 100%;
 }
-
 
 #home{
 	margin-top: 70px;
@@ -468,246 +419,6 @@ textarea {
 	}
 }
 
-// #seja-um-franqueado {
-// 	@extend .default-section;
-// 	background: linear-gradient( rgba(249, 70, 21, 0.4), rgba(249, 70, 21, 0.4)), url('../../../images/forlin-bg-top.jpg');
-// 	height: 100vh;
-// 	@include responsive(s2) {
-// 		height: auto;
-// 	}
-// 	@extend .bgs;
-// 	.abf{
-// 		position: absolute;
-// 		height: 15em;
-// 		width: 7em;
-// 		margin-left: -3.5em;
-// 		left: 75%;
-// 		bottom: 4em;
-// 		background-image: url('../../../images/forlin-abf-top.svg');
-// 		background-repeat: no-repeat;
-// 		@include responsive(s1){
-// 			left: 80%;
-// 		}
-// 		@include responsive(s2) {
-// 			display: none!important;
-// 		}
-// 	}
-// 	.decoration {
-// 		position: absolute;
-// 		@include opacity(0.9);
-// 		background-image: url('../../../images/forlin-logo-white.svg');
-// 		background-repeat: no-repeat;
-// 		@include responsive(s2){
-// 			display:none!important;
-// 		}
-// 	}
-// 	.decoration-1{
-// 		height: 25em;
-// 		width: 25em;
-// 		left: 75%;
-// 		margin-left: -12.5em;
-// 		top: 25%;
-// 		@include responsive(s1) {
-// 			left: 80%;
-// 		}
-// 	}
-// 	.decoration-2 {
-// 		height: 60em;
-// 		width: 60em;
-// 		top: 5%;
-// 		left: 70%;
-// 		@include opacity(0.1);
-// 	}
-// 	.decoration-3 {
-// 		height: 100em;
-// 		width: 100em;
-// 		top: -15%;
-// 		left: 0%;
-// 		@include opacity(0.03);
-// 	}
-// 	.container{
-// 		height: 100vh;
-// 	}
-// 	@media only screen and (max-height: 830px){
-// 		.decoration-1 {
-// 			height: 20em !important;
-// 			width: 20em !important;
-// 			left: 75%;
-// 			margin-left: -10em !important;
-// 			top: 20% !important;
-// 		}
-// 		.abf {
-// 			position: absolute;
-// 			width: 5em;
-// 			height: 10em;
-// 			margin-left: -2.5em;
-// 			left: 75%;
-// 			bottom: 2em;
-// 		}
-// 	}
-// 	@media only screen and (max-height: 750px){
-// 		.row-home{
-// 			input {
-// 				font-size: 1rem!important;
-// 				height: 45px;
-// 				padding: 0 1em;
-// 			}
-// 			h1 {
-// 				font-size: 2.8em;
-// 			}
-// 			button{
-// 				height: 55px;
-// 				svg{
-// 					top: 12px!important;
-// 				}
-// 			}
-// 			.extra-big {
-// 				font-size: 4rem;
-// 			}
-// 		}
-// 		.decoration-1 {
-// 			height: 18em !important;
-// 			width: 18em !important;
-// 			left: 75%;
-// 			margin-left: -9em !important;
-// 			top: 23% !important;
-// 		}
-// 		.abf {
-// 			position: absolute;
-// 			width: 5em;
-// 			height: 10em;
-// 			margin-left: -2.5em;
-// 			left: 75%;
-// 			bottom: 3em;
-// 		}
-// 		.select2-container {
-// 			&.select2-container--open {
-// 				.select2-selection--single {
-// 					.select2-selection__arrow {
-// 						height: 45px;
-// 					}
-// 				}
-// 			}
-// 			.select2-selection--single {
-// 				height: 45px!important;
-// 				padding: 0 1rem !important;
-// 				.select2-selection__rendered {
-// 					line-height: 45px !important;
-// 					font-size: 1rem;
-// 				}
-// 				.select2-selection__arrow {
-// 					height: 45px;
-// 				}
-// 			}
-// 		}
-
-// 	}
-// 	.row-home {
-// 		height: 100vh;
-// 		display: flex;
-// 		justify-content: flex-start;
-// 		align-items: center;
-// 		margin-top: 70px;
-// 		@include responsive(s2) {
-// 			margin-top: 40px;
-// 		}
-// 		h1 {
-// 			margin-top: 0px;
-// 			&:after {
-// 				content: '';
-// 				position: absolute;
-// 				bottom: 1em;
-// 				height: 8px;
-// 				width: 2em;
-// 				background-color: #000000;
-// 				top: 3.1em;
-// 				float: left;
-// 				opacity: 0.31;
-// 				left: 17px;
-// 				@include responsive(s2){
-// 					top: 5em;
-// 				}
-// 				@include responsive(s3) {
-// 					top: 4.3em;
-// 				}
-// 			}
-// 			margin-bottom: 2.85rem;
-// 			@include responsive(s2) {
-// 				margin-top: 1.3em;
-// 			}
-// 			@include responsive(s3) {
-// 				.extra-big{
-// 					font-size: 3rem;
-// 				}
-// 				margin-bottom: 0.5em;
-// 			}
-// 		}
-// 		p {
-// 			margin-top: 1em;
-// 			color: $color-white;
-// 			span{
-// 				color: $color-white;
-// 			}
-// 			@include responsive(s3) {
-// 				margin-bottom: 1em;
-// 			}
-// 		}
-// 		input,
-// 		.select2-selection--single{
-// 			@include responsive(s3) {
-// 				margin-bottom: 0.5em;
-// 			}
-// 		}
-// 		button {
-// 			left: 50%;
-// 			-webkit-transform: translatex(-12.5rem) !important;
-// 			-moz-transform: translatex(-12.5rem) !important;
-// 			-ms-transform: translatex(-12.5rem) !important;
-// 			transform: translatex(-12.5rem) !important;
-// 			@include responsive(s2){
-// 				left: 0;
-// 				-webkit-transform: translatex(0rem) !important;
-// 				-moz-transform: translatex(0rem) !important;
-// 				-ms-transform: translatex(0rem) !important;
-// 				transform: translatex(0rem) !important;
-// 			}
-// 			margin-top: 2em;
-// 			margin-bottom: 2.85rem;
-// 			padding-left: 20px;
-// 			position: relative;
-// 			border: 1px solid $color-white;
-// 			&:hover{
-// 				svg{
-// 					.cls-1 {
-// 						fill: $color-white;
-// 					}
-// 				}
-// 			}
-// 			svg{
-// 				@include transition(0.25s);
-// 				top:18px;
-// 				position: absolute;
-// 				height: 30px;
-// 				left: 30px;
-// 				@include responsive(s2){
-// 					top: 14px;
-// 				}
-// 			}
-// 				@include responsive(s3) {
-// 					margin-top: 0.5em;
-// 				}
-// 		}
-// 		.box-relative{
-// 			@extend .default-section;
-// 		}
-// 		.padding-left{
-// 			@include responsive(s2){
-// 				padding-left: 0px;
-// 			}
-// 		}
-// 	}
-// }
-
 #sobre {
 	@extend .default-section;
 	padding-top: 3em;
@@ -754,10 +465,10 @@ textarea {
 		background-repeat: no-repeat;
 		background-position: center center;
 		position: absolute;
-		bottom: 30px;
-		right: 100px;;
-		height: 350px;
-		width: 350px;
+		bottom: -50px;
+		right: 165px;
+		height: 440px;
+		width: 440px;
 		z-index:10;
 		@include responsive(s2) {
 			display: none !important;
@@ -765,289 +476,87 @@ textarea {
 	}
 }
 
-#duvidas-frequentes {
+#produtos{
 	@extend .default-section;
-	margin-top: 2.14em;
-	margin-bottom: 2.14em;
-	.row-duvidas-frequentes{
-		.title-section{
-			&:after {
-				top: 2.4em;
-			}
+	padding-bottom: 10em;
+	.p-default{
+		color: $color-dark-gray;
+	}
+	.decoration-coins{
+		background-image: url('../../../images/forlin-decoration-coins.svg');
+		background-repeat: no-repeat;
+		background-position: center center;
+		position: absolute;
+		bottom: -138px;
+		right: -178px;
+		height: 555px;
+		width: 555px;
+		z-index:10;
+		@include responsive(s2) {
+			display: none !important;
 		}
-		.p-light{
-			font-size: 1rem;
-			margin-bottom: 2em;
+	}
+	.forlin-button-orange{
+		background-color: $color-orange;
+		width: 15rem;
+		position: relative;
+		float: left;
+		clear: both;
+		margin-top: 3em;
+		color: $color-white !important;
+		&:hover{
+			background-color: $color-blue;
+			border-color: $color-blue;
+		}
+	}
+}
+
+#moedas{
+	@extend .default-section;
+	background-color: $color-blue;
+	padding-bottom: 8em;
+	padding-top: 2.5em;
+	.title-section-alternative{
+		color: $color-orange!important;
+	}
+	.title-h2{
+		color: $color-white;
+	}
+	.row-items{
+		margin-top: 4em;
+		text-align: center;
+		img{
+			margin: 0 auto;
+			width: 60px;
+			margin-bottom: 1em;
+			margin-top: 2em;
 		}
 		h3{
-			position: relative;
-			float: left;
-			width: 100%;
-			font-size: 1.7em;
-			color: $color-orange;
-			margin-bottom: 1.4em;
-			line-height: 1.4em;
-			margin-top: 0;
-			margin-bottom: 1.2em;
-			cursor: pointer;
-		}
-		.question{
-			position: relative;
-			float: left;
-			width: calc(100% - 3em);
-			font-family: $font-primary;
-			font-size: 1.5em;
-			color: $color-dark-gray;
-			margin-bottom: 1.4em;
-			line-height: 1.4em;
-			margin-left: 3em;
-			cursor: pointer;
-		}
-		.awnser {
-			position: relative;
-			float: left;
-			width: calc(100% - 6em);
-			font-family: $font-secondary;
-			font-size: 1rem;
-			color: $color-dark-gray;
-			margin-bottom: 1.4em;
-			line-height: 1.4em;
-			margin-left: 6em;
-		}
-	}
-}
-
-#glossario {
-	@extend .default-section;
-	margin-top: 2.14em;
-	margin-bottom: 1em;
-	h3 {
-		@extend .default-section;
-		color: $color-dark-gray;
-		font-family: $font-secondary;
-		font-size: 1.4em;
-		margin-bottom: 1.5em;
-	}
-	h4 {
-		@extend .default-section;
-		color: $color-orange;
-		font-family: $font-secondary;
-		font-size: 1.4em;
-		margin-bottom: 1.5em;
-		font-weight: normal;
-	}
-	.format-letter{
-		position: relative;
-		float: left;
-		margin-right: 5px;
-		cursor: pointer;
-		&.hl {
-			font-family: $font-primary;
-		}
-	}
-	.title-glossario{
-		@extend .default-section;
-		color: $color-orange;
-		font-family: $font-primary;
-		margin-top: 1em;
-		margin-bottom: 1em;
-		font-size: 1.5em;
-	}
-	#filter-glossary{
-		margin: 0;
-	}
-	.description-glossario{
-		@extend .default-section;
-		margin-left: 3em;
-		font-family: $font-secondary;
-		color: $color-dark-gray;
-		margin-bottom: 0em;
-		font-size: 1rem;
-		width: calc(100% - 3em);
-	}
-	.box-relative{
-		@extend .default-section;
-		margin-bottom: 2em;
-		input {
-			background-color: $color-white;
-			border: 1px solid $color-dark-gray;
-			@include placeholder($color-orange);
-			text-transform: uppercase;
-			color: $color-orange!important;
-			@include transition(0.25s);
-			@include responsive(s2){
-				font-size: 1.4em!important;
-			}
-		}
-		button {
-			position: absolute;
-			height: 25px;
-			width: 25px;
-			border: none;
-			top: 1.3em;
-			right: 1.2em;
-			background-image: url('../../../images/forlin-btn-filter.svg');
-			background-color: transparent;
-			@include responsive(s2){
-				right: 2em;
-				height: 20px;
-				width: 20px;
-				top: 1.6em;
-			}
-		}
-	}
-	ul {
-		position: relative;
-		float: left;
-		width: 100%;
-		margin: 0;
-		padding: 0;
-		li {
-			list-style-type: none;
-			color: $color-dark-gray;
-			font-size: 1.1em;
-			cursor: pointer;
-			.hl{
-				color: $color-orange;
-				text-transform: uppercase;
-			}
-		}
-	}
-}
-
-#seguradoras-associadas {
-	@extend .default-section;
-	margin-top: 2.14em;
-	margin-bottom: 2.14em;
-	.row-seguradoras-associadas {
-		.title-section {
-			&:after {
-				top: 2.4em;
-			}
-		}
-	}
-	.box-relative {
-		@extend .default-section;
-		.item-img {
-			border: 1px solid $color-gray;
-			width: 100%;
-			height: 160px;
-			border-radius: 10px;
-			@include responsive(s3){
-				height: 230px;
-			}
-		}
-		h2 {
-			color: $color-dark-gray;
-			font-size: 2em;
-			font-family: $font-primary;
-			margin-bottom: 0.5em;
-			text-align: center;
-		}
-		p {
-			color: $color-orange;
-			text-align: center;
-		}
-		button {
-			position: relative;
-			height: 2.5rem;
-			width: 10rem;
-			font-family: $font-secondary;
-			background-color: $color-orange;
-			border: none;
 			color: $color-white;
-			padding: 0px;
-			border-radius: 40px;
-			font-size: 0.8rem;
-			left: 50%;
-			letter-spacing: 0.5px;
-			text-transform: uppercase;
-			@include transition(0.25s);
-			-webkit-transform: translatex(-5rem) !important;
-			-moz-transform: translatex(-5rem) !important;
-			-ms-transform: translatex(-5rem) !important;
-			transform: translatex(-5rem) !important;
-			margin-bottom: 4em;
-			&:hover {
-				background-color: $color-dark-gray;
-			}
+			font-size: 2em;
 		}
-	}
-	#carousel-seguradoras-associadas {
-		.owl-nav {
-			position: absolute;
-			top: calc(50% - 121px);
-			margin: 0px;
-			width: 100%;
-			z-index: -1;
-			.owl-prev {
-				background: none;
-				padding: 0px;
-				border-radius: 0px;
-				float: left;
-				&:hover {
-					background-color: transparent;
-				}
-				.arrow-prev {
-					height: 50px;
-					width: 50px;
-					position: relative;
-					float: left;
-					background-image: url("../../../images/forlin-arrow-prev.svg");
-					margin-left: -61px;
-					@include transition(0.15s);
-					@include responsive(s2) {
-						margin-right: 0px;
-					}
-					&:hover {
-						@include scale(0.9);
-					}
-				}
-			}
-			.owl-next {
-				background: none;
-				padding: 0px;
-				border-radius: 0px;
-				float: right;
-				&:hover {
-					background-color: transparent;
-				}
-				.arrow-next {
-					height: 50px;
-					width: 50px;
-					position: relative;
-					float: left;
-					background-image: url("../../../images/forlin-arrow-next.svg");
-					margin-right: -180px;
-					@include transition(0.15s);
-					@include responsive(s2) {
-						margin-right: 0px;
-					}
-					&:hover {
-						@include scale(0.9);
-					}
-				}
-			}
+		p{
+			margin-top: 2em;
 		}
 	}
 }
 
 #contato {
 	@extend .default-section;
-	background-color: $color-deep-gray;
-	margin-top: 2.14em;
+	background-color: $color-blue-dark;
 	margin-bottom: 0em;
+	padding-bottom: 8em;
 	.row-contato {
 		.title-section {
 			text-align: center;
 			color: $color-white;
 			&:after {
-				content: '';
+				content: url('../../../images/forlin-decotation.svg');
 				position: absolute;
 				bottom: 1em;
-				width: 1.8em;
+				width: 1em;
 				height: 8px;
-				background-color: $color-very-dark-gray !important;
+				top: 1em;
 				float: left;
 				left: 5px;
 				margin-left: 50%;
@@ -1073,9 +582,6 @@ textarea {
 				font-size: 1.4em !important;
 			}
 		}
-		textarea{
-			border-radius: 10px!important;
-		}
 		button{
 			width: 15em;
 			margin-top: 1em;
@@ -1085,13 +591,41 @@ textarea {
 			-moz-transform: translatex(-7.5em) !important;
 			-ms-transform: translatex(-7.5em) !important;
 			transform: translatex(-7.5em) !important;
-			background-color: $color-very-dark-gray;
+			background-color: $color-orange;
 			color: $color-white;
 			border: 1px solid $color-very-dark-gray;
 			&:hover{
-				background-color: $color-orange;
-				border: 1px solid $color-orange;
+				background-color: $color-blue;
+				border: 1px solid $color-blue;
 				color: $color-white;
+			}
+		}
+	}
+	.row-items{
+		margin-top: 6em;
+		margin-bottom: 6em;
+		.circle{
+			background-color: $color-blue;
+			border-radius: 50%;
+			width: 250px;
+			height: 250px;
+			margin: 0 auto;
+			display: flex;
+			justify-content: center;
+			align-items: center;
+			text-align: center;
+			img{
+				height: 80px;
+				width: 80px;
+				margin:0 auto;
+			}
+			h2{
+				color: $color-white;
+				font-size: 1.5em;
+			}
+			p{
+				color: $color-orange;
+				font-size: 1em;
 			}
 		}
 	}
@@ -1103,7 +637,7 @@ footer{
 	padding-top: 3em;
 	padding-bottom: 2em;
 	color: $color-white;
-	background-color: $color-very-dark-gray;
+	background-color: $color-orange;
 	p{
 		margin-bottom: 0.1em;
 	}
@@ -1117,6 +651,23 @@ footer{
 		}
 		@include responsive(s2){
 			text-align: center;
+		}
+		ul{
+			max-width: 280px;
+			margin: 0;
+			margin-bottom: 1em;
+			padding: 0;
+			display: flex;
+			justify-content: space-between;
+			align-items: center;
+			li{
+				list-style: none;
+				a{
+					img{
+
+					}
+				}
+			}
 		}
 	}
 	.col-right{
